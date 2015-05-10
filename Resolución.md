@@ -36,3 +36,29 @@
 12. ¿Qué cambios se deben hacer al programa para que también informe la cantidad de líneas y de caracteres de la entrada?
 
 13. Escribir un nuevo programa *Promediar2.c*.
+
+
+**Resolución**
+
+1. La primera expresión del **for** es:
+
+    `nl = 0, nc = 0;`
+
+La coma '**,**' en el lenguaje C es un operador binario que indica el orden en el que las expresiones que separa serán evaluadas. 
+
+En consecuencia, en este caso, en primera instancia se evaluará:
+
+
+`nl = 0;`
+
+y luego la segunda asignación:
+
+`nc = 0;`
+
+
+Sin embargo, en este caso en particular, no es de vital importancia para el funcionamiento adecuado del programa el orden en el que se lleven a cabo estas asignaciones. Por lo tanto, una expresión equivalente sería:
+
+`nl = nc = 0;`
+
+En esta nueva expresión es destacable el papel que juega la asociatividad de la expresión, que va de derecha a izquierda, como si se evaluara de esta forma: `nl = (nc = 0);`. Así, `(nc = 0)` nos retorna un valor '0' que es asignado a `nl`.
+
