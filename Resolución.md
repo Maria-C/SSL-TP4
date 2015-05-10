@@ -78,8 +78,18 @@
 
 	En consecuencia, 'c' siempre estaría tomando los valores '0' o '1' y el ciclo **for** no tendría finalización, ya que cuando se llega a **EOF**, ya sea por error o por finalización, si volvemos a pedir datos, lo que obtendríamos del flujo sería nuevamente **EOF** y así sucesivamente.
 
-3. 
+3. La sentencia **if** que se encuentra a continuación de la sentencia **for** es la siguiente:
 
 	
+
+			if (!feof (stdin))
+
+				perror ("No se pudo seguir leyendo debido a un error");
+
+	
+	* Semántica: la sentencia **if** evalúa la expresión `feof (stdin)` y la niega. En caso de resultar verdadero, invoca a **perror**.
+	* Pragmática: se utiliza esta sentencia para saber si el programa finalizó debido a un error en la obtención de datos del flujo o no.
+	
+
 
   
